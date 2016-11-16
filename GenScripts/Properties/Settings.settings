@@ -9,5 +9,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">www3</Value>
     </Setting>
+    <Setting Name="ServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">KONSTANTIN-PC\SQLEXPRESS14</Value>
+    </Setting>
+    <Setting Name="DBName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MatrixB</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

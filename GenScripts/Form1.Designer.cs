@@ -104,7 +104,6 @@
 			this.edServer.Name = "edServer";
 			this.edServer.Size = new System.Drawing.Size(100, 20);
 			this.edServer.TabIndex = 5;
-			this.edServer.Text = "orvdserver";
 			this.edServer.TextChanged += new System.EventHandler(this.edServer_TextChanged);
 			// 
 			// edPsw
@@ -130,7 +129,6 @@
 			this.edBD.Name = "edBD";
 			this.edBD.Size = new System.Drawing.Size(100, 20);
 			this.edBD.TabIndex = 6;
-			this.edBD.Text = "PlanBaseCFn01";
 			// 
 			// label1
 			// 
@@ -171,6 +169,8 @@
 			// cbAuth
 			// 
 			this.cbAuth.AutoSize = true;
+			this.cbAuth.Checked = true;
+			this.cbAuth.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbAuth.Location = new System.Drawing.Point(52, 66);
 			this.cbAuth.Name = "cbAuth";
 			this.cbAuth.Size = new System.Drawing.Size(157, 17);
