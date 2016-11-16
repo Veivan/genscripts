@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using OperateSQL;
 
+using System.Configuration;
+
 namespace GenScripts
 {
     public partial class Form1 : Form
@@ -16,6 +18,12 @@ namespace GenScripts
         {
             InitializeComponent();
         }
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			edServer.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.myConnectionString"].ConnectionString;
+
+		}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -26,12 +34,18 @@ namespace GenScripts
             ClassOperate.DBName = edBD.Text; // @"TestDS";
             ClassOperate.ULogin = edLogin.Text; // @"sa";
             ClassOperate.Psw = edPsw.Text; // @"123456";
+            ClassOperate.WinAuth = cbAuth.Checked;
 
             ClassOperate.doTables = cbTables.Checked;
             ClassOperate.doViews  = cbViews.Checked;
             ClassOperate.doProcs  = cbProcs.Checked;
             ClassOperate.doFuncs  = cbFuncs.Checked;
             myServer.DoIt();
+        }
+
+        private void edServer_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
