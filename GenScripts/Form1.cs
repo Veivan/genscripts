@@ -21,18 +21,17 @@ namespace GenScripts
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			//edServer.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.myConnectionString"].ConnectionString;
-			edServer.Text = ConfigurationManager.AppSettings.Get("ServerName");
-			edBD.Text = ConfigurationManager.AppSettings["GenScripts.Properties.Settings.DBName"].ToString();
+			edServer.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.ServerName"].ConnectionString;
+			edBD.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.DBName"].ConnectionString;
+			//edServer.Text = ConfigurationManager.AppSettings.Get("ServerName");
+			//edBD.Text = ConfigurationManager.AppSettings["GenScripts.Properties.Settings.DBName"].ToString();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			ClassOperate myServer = new ClassOperate();
-			//ClassOperate.ServerName = @"orvdserver";
-			//ClassOperate.DBName = @"PlanBaseCFn01";
-			ClassOperate.ServerName = edServer.Text;// @"orvdserver";
-			ClassOperate.DBName = edBD.Text; // @"TestDS";
+			ClassOperate.ServerName = edServer.Text;
+			ClassOperate.DBName = edBD.Text; 
 			ClassOperate.ULogin = edLogin.Text; // @"sa";
 			ClassOperate.Psw = edPsw.Text; // @"123456";
 			ClassOperate.WinAuth = cbAuth.Checked;
