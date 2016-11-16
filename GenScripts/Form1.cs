@@ -21,8 +21,10 @@ namespace GenScripts
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			edServer.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.ServerName"].ConnectionString;
-			edBD.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.DBName"].ConnectionString;
+			edServer.Text = ConfigurationManager.AppSettings["ServerName"];
+			edBD.Text = ConfigurationManager.AppSettings["DBName"];
+			//edServer.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.ServerName"].ConnectionString;
+			//edBD.Text = ConfigurationManager.ConnectionStrings["GenScripts.Properties.Settings.DBName"].ConnectionString;
 			//edServer.Text = ConfigurationManager.AppSettings.Get("ServerName");
 			//edBD.Text = ConfigurationManager.AppSettings["GenScripts.Properties.Settings.DBName"].ToString();
 		}
